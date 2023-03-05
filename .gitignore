@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+dataset/*
+predictions/*
+embedding/*
+paths/*
+code_metapath2vec/*
+__pycache__
