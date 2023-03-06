@@ -38,14 +38,17 @@ def novelty(predicted, pop, u, n):
     """
     mean_self_information = []
     k = 0
-    for sublist in predicted:
-        self_information = 0
-        k += 1
-        for i in sublist:
-            if i in pop.keys():
-                self_information += np.sum(-np.log2(pop[i] / u))
-        mean_self_information.append(self_information/n)
-    novelty = sum(mean_self_information)/k
+    if len(predicted)>0:
+      for sublist in predicted:
+          self_information = 0
+          k += 1
+          for i in sublist:
+              if i in pop.keys():
+                  self_information += np.sum(-np.log2(pop[i] / u))
+          mean_self_information.append(self_information/n)
+      novelty = sum(mean_self_information)/k
+    else:
+      novelty = 0
     return novelty, mean_self_information
 
 def prediction_coverage(predicted, catalog):
