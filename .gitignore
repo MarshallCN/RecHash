@@ -4,4 +4,5 @@ predictions/*
 embedding/*
 paths/*
 code_metapath2vec/*
+recmetrics/__pycache__/*
 __pycache__
